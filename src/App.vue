@@ -1,17 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>
+      State managment:
+      <br>
+      <span class="green">
+        app state : {{ counterr }}
+      </span>
+    </h1>
+    <div class="state">
+      <Counter @updating="counterr += $event"></Counter>
+      <hr>
+      <Result :numbiir="counterr"></Result>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Counter from './components/Counter.vue';
+import Result from './components/Result.vue';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      counterr: 0,
+    };
+  },
   components: {
-    HelloWorld,
+    Counter,
+    Result,
   },
 };
 </script>
@@ -24,5 +41,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.state {
+  margin: 16px auto;
+}
+.green {
+  font-size: 14px;
+  color: green;
 }
 </style>
