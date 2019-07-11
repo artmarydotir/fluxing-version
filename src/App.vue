@@ -9,12 +9,16 @@
       <hr>
       <Result ></Result>
       <AnotherResult ></AnotherResult>
+      <hr>
+      another counter another mutation:
+      <AnotherCounter ></AnotherCounter>
     </div>
   </div>
 </template>
 
 <script>
 import Counter from './components/Counter.vue';
+import AnotherCounter from './components/AnotherCounter.vue';
 import Result from './components/Result.vue';
 import AnotherResult from './components/AnotherResult.vue';
 
@@ -24,6 +28,7 @@ export default {
     Counter,
     Result,
     AnotherResult,
+    AnotherCounter,
   },
 };
 </script>

@@ -12,7 +12,10 @@ export default new Vuex.Store({
     stingCounter: state => `${state.counter} Clicks`,
   },
   mutations: {
-
+    // eslint-disable-next-line no-plusplus
+    increment: state => state.counter++,
+    // eslint-disable-next-line no-plusplus
+    decrement: state => state.counter--,
   },
   actions: {
 
