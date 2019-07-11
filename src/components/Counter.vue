@@ -10,10 +10,12 @@ export default {
   name: 'Counter',
   methods: {
     incre() {
-      this.$emit('updating', 1);
+      // eslint-disable-next-line no-plusplus
+      this.$store.state.counter++;
     },
     decre() {
-      this.$emit('updating', -1);
+      // eslint-disable-next-line no-plusplus
+      this.$store.state.counter--;
     },
   },
 };

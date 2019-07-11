@@ -2,14 +2,18 @@
   <div>
     <p>
       Counter result is:
-      {{ numbiir }}
+      {{ counterResult }}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['numbiir'],
+  computed: {
+    counterResult() {
+      return this.$store.state.counter;
+    },
+  },
 };
 </script>
 

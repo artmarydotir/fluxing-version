@@ -3,14 +3,11 @@
     <h1>
       State managment:
       <br>
-      <span class="green">
-        app state : {{ counterr }}
-      </span>
     </h1>
     <div class="state">
-      <Counter @updating="counterr += $event"></Counter>
+      <Counter></Counter>
       <hr>
-      <Result :numbiir="counterr"></Result>
+      <Result ></Result>
     </div>
   </div>
 </template>
@@ -21,11 +18,6 @@ import Result from './components/Result.vue';
 
 export default {
   name: 'app',
-  data() {
-    return {
-      counterr: 0,
-    };
-  },
   components: {
     Counter,
     Result,
