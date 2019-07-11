@@ -11,13 +11,30 @@ export default new Vuex.Store({
     doubleCounter: state => state.counter * 2,
     stingCounter: state => `${state.counter} Clicks`,
   },
+  // Sync-commit
   mutations: {
-    // eslint-disable-next-line no-plusplus
-    increment: state => state.counter++,
+    increment: (state, payload) => {
+      state.counter += payload;
+    },
     // eslint-disable-next-line no-plusplus
     decrement: state => state.counter--,
   },
+  // Async-dispatch
   actions: {
-
+    // one way
+    increment: (context, payload) => context.commit('increment', payload),
+    decrement: context => context.commit('decrement'),
+    // another way
+    // increment: ({ commit }) => commit('increment'),
+    asycIncrement: ({ commit }) => {
+      setTimeout(() => {
+        commit('increment');
+      }, 2000);
+    },
+    asycDecrement: ({ commit }) => {
+      setTimeout(() => {
+        commit('decrement');
+      }, 2000);
+    },
   },
 });

@@ -1,17 +1,24 @@
 <template>
   <div>
-    <button @click="increment">Increment</button>
+    1.one way to have a argument in actions is to create a dispatch method that accept an argument
+    <br>
+    2.another way to have arg in actions is to give a second arc in sote actions with the name of Payload.
+    <br>
+    <button @click="increment(100)">Increment</button>
     <button @click="decrement">Decrement</button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Counter',
   methods: {
-    ...mapMutations(['increment', 'decrement']),
+    ...mapActions(['increment', 'decrement']),
+    // increment(by) {
+    //   this.$store.dispatch('increment', by);
+    // },
   },
 };
 </script>
