@@ -2,17 +2,24 @@
   <div>
     <p>
       Counter result is:
-      {{ counterResult }}
+      {{ doubleCounter }}
+    </p>
+    <p>
+      im from getter
+      {{ doubleCounter }}
     </p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   computed: {
-    counterResult() {
-      return this.$store.getters.doubleCounter;
-    },
+    ...mapGetters(['doubleCounter']),
+    // counterResult() {
+    //   return this.$store.getters.doubleCounter;
+    // },
   },
 };
 </script>
