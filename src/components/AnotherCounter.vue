@@ -4,8 +4,8 @@
     <br>
     2.another way to have arg in actions is to give a second arc in sote actions with the name of Payload.
     <br>
-    <button @click="increment(100)">Increment</button>
-    <button @click="decrement">Decrement</button>
+    <button @click="asycIncrement({by: 50, time: 3000})">Increment</button>
+    <button @click="asycDecrement">Decrement</button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import { mapActions } from 'vuex';
 export default {
   name: 'Counter',
   methods: {
-    ...mapActions(['increment', 'decrement']),
+    ...mapActions(['asycIncrement', 'asycDecrement']),
     // increment(by) {
     //   this.$store.dispatch('increment', by);
     // },

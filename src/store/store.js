@@ -26,10 +26,10 @@ export default new Vuex.Store({
     decrement: context => context.commit('decrement'),
     // another way
     // increment: ({ commit }) => commit('increment'),
-    asycIncrement: ({ commit }) => {
+    asycIncrement: ({ commit }, payload) => {
       setTimeout(() => {
-        commit('increment');
-      }, 2000);
+        commit('increment', payload.by);
+      }, payload.time);
     },
     asycDecrement: ({ commit }) => {
       setTimeout(() => {
