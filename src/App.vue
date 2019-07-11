@@ -12,6 +12,9 @@
       <hr>
       another counter another mutation:
       <AnotherCounter ></AnotherCounter>
+      <hr>
+      <input type="text" v-model="value">
+      {{ value }}
     </div>
   </div>
 </template>
@@ -24,6 +27,17 @@ import AnotherResult from './components/AnotherResult.vue';
 
 export default {
   name: 'app',
+  computed: {
+    value: {
+      // wow
+      get() {
+        return this.$store.getters.getValue;
+      },
+      set(value) {
+        this.$store.dispatch('actionsValue', value);
+      },
+    },
+  },
   components: {
     Counter,
     Result,
